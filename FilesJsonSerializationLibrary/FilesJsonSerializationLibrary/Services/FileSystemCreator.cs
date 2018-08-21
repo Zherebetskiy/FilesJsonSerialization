@@ -1,4 +1,5 @@
-﻿using FilesJsonSerializationLibrary.Models;
+﻿using FilesJsonSerializationLibrary.Interfaces;
+using FilesJsonSerializationLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace FilesJsonSerializationLibrary.Services
 {
-    public class FileSystemCreator
+    public class FileSystemCreator : ICreator
     {
         //public string NeedlessDirectory { get; set; }
-        public string RootFolder { get; set; }
+        //public string RootFolder { get; set; }
 
-        public FileSystemCreator(string rootFolder)
-        {
-            //   NeedlessDirectory = targetDirectory.Substring(0, targetDirectory.LastIndexOf("/")).Replace("/", "\\");
-            RootFolder = rootFolder;
-        }
+        //public FileSystemCreator(string rootFolder)
+        //{
+        //    NeedlessDirectory = targetDirectory.Substring(0, targetDirectory.LastIndexOf("/")).Replace("/", "\\");
+        //    RootFolder = rootFolder;
+        //}
 
         //
         // return List of custom File instances in target directory 
@@ -67,15 +68,15 @@ namespace FilesJsonSerializationLibrary.Services
         // method for creating root directory and starting
         // creation folders' tree
         //
-        public Folder Create()
+        public Folder Create(string rootFolder)
         {
-            var info = new System.IO.DirectoryInfo(RootFolder);
+            var info = new System.IO.DirectoryInfo(rootFolder);
             return new Folder
                 {
                     Name = info.Name,
                     DateCreated = info.CreationTime,
-                    Files = GetFiles(RootFolder),
-                    Children = GetFolders(RootFolder)
+                    Files = GetFiles(rootFolder),
+                    Children = GetFolders(rootFolder)
                 };
         }
     }
