@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace SerializingWebAPI
+namespace SerializingWeb
 {
     public class Startup
     {
@@ -43,6 +43,11 @@ namespace SerializingWebAPI
             {
                 app.UseHsts();
             }
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "api/Serializing");
+            });
 
             app.UseHttpsRedirection();
             app.UseMvc();

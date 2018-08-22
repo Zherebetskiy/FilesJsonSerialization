@@ -26,9 +26,8 @@ namespace SerializingForms
             {
                 try
                 {
-                    textBox1.Text = folderBrowserDialog.SelectedPath;
-                    string targetDirectory = folderBrowserDialog.SelectedPath.Replace("\\", "/");
-                    textBox2.Text = serializator.Serialize(targetDirectory);
+                    textBox1.Text = folderBrowserDialog.SelectedPath;                   
+                    textBox2.Text = serializator.Serialize(folderBrowserDialog.SelectedPath);
                 }
                 catch (SerializationException ex)
                 {

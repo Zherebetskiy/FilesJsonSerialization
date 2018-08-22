@@ -6,10 +6,10 @@ namespace FilesJsonSerializationLibrary.Services
 {
     public class FileSystemCreator : ICreator
     {
-        List<File> GetFiles(string rootFolder)
+        List<File> GetFiles(string folder)
         {
             List<File> currentFiles = new List<File>();
-            var files = System.IO.Directory.GetFiles(rootFolder);
+            var files = System.IO.Directory.GetFiles(folder);
 
             foreach (var file in files)
             {
@@ -17,7 +17,7 @@ namespace FilesJsonSerializationLibrary.Services
                 currentFiles.Add(new File
                 {
                     Name = info.Name,
-                    Size = info.Length,
+                    Size = string.Concat(info.Length, "B"),
                     Path = info.FullName
                 });
             }
@@ -25,9 +25,6 @@ namespace FilesJsonSerializationLibrary.Services
             return currentFiles;
         }
 
-        //
-        // recursively create folders' tree as custom Directory instances
-        //
         List<Folder> GetFolders(string rootDirectory)
         {
             List<Folder> currentFolders = new List<Folder>();
@@ -48,10 +45,6 @@ namespace FilesJsonSerializationLibrary.Services
             return currentFolders;
         }
 
-        //
-        // method for creating root directory and starting
-        // creation folders' tree
-        //
         public Folder Create(string rootFolder)
         {
             var info = new System.IO.DirectoryInfo(rootFolder);

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesJsonSerializationLibra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializingForms", "SerializingForms\SerializingForms.csproj", "{D7F0DF83-F60B-4588-AB51-FB4322E3E7F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializingWebAPI", "SerializingWebAPI\SerializingWebAPI.csproj", "{E6F8AFE4-D1AD-40E7-AD20-2F91B0DA7222}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializingWeb", "SerializingWeb\SerializingWeb.csproj", "{F0AA5D52-A443-468D-A33D-E467C1E79EC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{D7F0DF83-F60B-4588-AB51-FB4322E3E7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7F0DF83-F60B-4588-AB51-FB4322E3E7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7F0DF83-F60B-4588-AB51-FB4322E3E7F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6F8AFE4-D1AD-40E7-AD20-2F91B0DA7222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6F8AFE4-D1AD-40E7-AD20-2F91B0DA7222}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6F8AFE4-D1AD-40E7-AD20-2F91B0DA7222}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6F8AFE4-D1AD-40E7-AD20-2F91B0DA7222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0AA5D52-A443-468D-A33D-E467C1E79EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0AA5D52-A443-468D-A33D-E467C1E79EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0AA5D52-A443-468D-A33D-E467C1E79EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0AA5D52-A443-468D-A33D-E467C1E79EC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

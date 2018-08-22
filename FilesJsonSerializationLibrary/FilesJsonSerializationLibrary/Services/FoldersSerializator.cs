@@ -1,4 +1,5 @@
-﻿using FilesJsonSerializationLibrary.Interfaces;
+﻿using FilesJsonSerializationLibrary.Common;
+using FilesJsonSerializationLibrary.Interfaces;
 using System.Web.Script.Serialization;
 
 namespace FilesJsonSerializationLibrary.Services
@@ -13,8 +14,11 @@ namespace FilesJsonSerializationLibrary.Services
 
         public string Serialize(string path)
         {
+            var selializator = new JavaScriptSerializer();
+            path = path.Replace("\\", "/");
             var rootFolder = fileSystemCreator.Create(path);
-            var json = new JavaScriptSerializer().Serialize(rootFolder);
+            selializator.RegisterConverters(new[] { new FolderConverter() });
+            var json = selializator.Serialize(rootFolder);
             return json;
         }
     }
