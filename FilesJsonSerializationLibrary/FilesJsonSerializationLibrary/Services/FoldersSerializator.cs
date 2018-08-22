@@ -17,9 +17,9 @@ namespace FilesJsonSerializationLibrary.Services
             this.fileSystemCreator = fileSystemCreator;
         }
 
-        public string Serialize(string path)
+        public string Serialize()
         {
-            path = "C: /Users/zhere/OneDrive/Документи/GitHub/BS_Linq/BS_Linq/AcademyDataStructureLINQ/AcademyDataStructureLINQ/bin";
+            string path = "C: /Users/zhere/OneDrive/Документи/GitHub/BS_Linq/BS_Linq/AcademyDataStructureLINQ/AcademyDataStructureLINQ/bin";
              var rootFolder = fileSystemCreator.Create(path);
             var json = new JavaScriptSerializer().Serialize(rootFolder);
             return json;
