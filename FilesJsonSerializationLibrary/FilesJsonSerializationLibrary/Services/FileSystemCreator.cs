@@ -1,27 +1,11 @@
 ﻿using FilesJsonSerializationLibrary.Interfaces;
 using FilesJsonSerializationLibrary.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilesJsonSerializationLibrary.Services
 {
     public class FileSystemCreator : ICreator
     {
-        //public string NeedlessDirectory { get; set; }
-        //public string RootFolder { get; set; }
-
-        //public FileSystemCreator(string rootFolder)
-        //{
-        //    NeedlessDirectory = targetDirectory.Substring(0, targetDirectory.LastIndexOf("/")).Replace("/", "\\");
-        //    RootFolder = rootFolder;
-        //}
-
-        //
-        // return List of custom File instances in target directory 
-        //
         List<File> GetFiles(string rootFolder)
         {
             List<File> currentFiles = new List<File>();
@@ -55,7 +39,7 @@ namespace FilesJsonSerializationLibrary.Services
                 currentFolders.Add(new Folder
                 {
                     Name = info.Name,
-                    DateCreated = info.CreationTime,
+                    DateCreated = info.CreationTimeUtc,
                     Files = GetFiles(directory),
                     Children = GetFolders(directory)
                 });

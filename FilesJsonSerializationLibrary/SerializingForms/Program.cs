@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FilesJsonSerializationLibrary.Interfaces;
+using FilesJsonSerializationLibrary.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,9 @@ namespace SerializingForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            ICreator creator = new FileSystemCreator();
+            ISerializator serializator = new FoldersSerializator(creator);
+            Application.Run(new Form1(serializator));
         }
     }
 }
